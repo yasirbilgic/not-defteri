@@ -1,0 +1,113 @@
+.nd-kok { font-size: 0.95em; }
+.nd-baslik { font-weight: 600; margin: 0 0 6px 0; }
+.nd-nav { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 6px; }
+.nd-tarih { font-weight: 600; min-width: 92px; text-align: center; }
+.nd-tarih-giris { padding: 1px 6px; border-radius: 4px; border: 1px solid var(--background-modifier-border); background: var(--background-secondary); color: var(--text-normal); font-family: inherit; font-size: 0.9em; }
+.nd-btn { padding: 1px 8px; border-radius: 4px; border: 1px solid var(--background-modifier-border); background: var(--background-secondary); color: var(--text-normal); cursor: pointer; font-family: inherit; font-size: 0.9em; line-height: 1.6; }
+.nd-btn:hover { background: var(--background-modifier-hover); }
+.nd-btn.nd-aktif { background: var(--interactive-accent); color: var(--text-on-accent); border-color: transparent; font-weight: 600; }
+.nd-btn.nd-pasif { opacity: 0.45; }
+
+/* (v8) "Öğeler:" rozet satırı KALDIRILDI — öğe adı doğrudan butonların üstünde (.nd-oge) görünür */
+
+/* Öğe seçme (ekle/kaldır), Öğrenciler ve Gelişmiş panelleri */
+.nd-ekle, .nd-gelismis, .nd-ogrenciler { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 0 0 8px 0; padding: 6px 8px; border: 1px solid var(--background-modifier-border); border-radius: 6px; background: var(--background-secondary); }
+.nd-ekle-baslik { flex-basis: 100%; font-size: 0.85em; font-weight: 600; opacity: 0.85; }
+.nd-ekle .nd-not, .nd-gelismis .nd-not, .nd-ogrenciler .nd-not { flex-basis: 100%; margin-top: 2px; }
+.nd-btn.nd-secim { border-radius: 999px; opacity: 0.85; }
+.nd-btn.nd-secim:hover { opacity: 1; }
+.nd-btn.nd-secim.nd-aktif { opacity: 1; }
+
+/* Öğrenci ekleme — Öğrenciler paneli (v6/v7) */
+.nd-input { flex-basis: 100%; padding: 3px 8px; border-radius: 4px; border: 1px solid var(--background-modifier-border); background: var(--background-primary); color: var(--text-normal); font-family: inherit; font-size: 0.9em; }
+.nd-ogr-kutu { display: inline-flex; align-items: center; gap: 3px; padding: 0 4px 0 9px; border-radius: 999px; border: 1px solid var(--background-modifier-border); background: var(--background-primary); font-size: 0.85em; }
+.nd-btn.nd-ogr-sil { padding: 0 4px; border-color: transparent; background: transparent; opacity: 0.6; }
+.nd-btn.nd-ogr-sil:hover { opacity: 1; color: var(--text-error); background: var(--background-modifier-hover); }
+
+/* Tam öğrenci listesi — tek ekranda, satır başına çıkarma (v7) */
+.nd-ogr-liste { flex-basis: 100%; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); gap: 0 12px; margin-top: 2px; }
+.nd-ogr-satir { display: flex; align-items: center; justify-content: space-between; gap: 4px; padding: 1px 2px; border-bottom: 1px solid var(--background-modifier-border); }
+.nd-ogr-ad { font-size: 0.9em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nd-ogr-cikarilan { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 5px; align-items: center; margin-top: 4px; }
+.nd-ogr-kutu.nd-ogr-gizli { opacity: 0.55; }
+.nd-ogr-gizli .nd-ogr-ad { text-decoration: line-through; }
+.nd-btn.nd-ogr-geri { padding: 0 4px; border-color: transparent; background: transparent; opacity: 0.6; }
+.nd-btn.nd-ogr-geri:hover { opacity: 1; color: var(--text-accent); background: var(--background-modifier-hover); }
+
+/* Öğrenci listesi — öğe kolonları hizalı ızgara; çok öğede karışmaz (v5) */
+.nd-liste { display: grid; grid-template-columns: var(--nd-kolon, minmax(150px, 1fr)); column-gap: 12px; margin: 6px 0; }
+.nd-satir { display: contents; }
+.nd-satir > * { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 3px 0; border-bottom: 1px solid var(--background-modifier-border); min-width: 0; }
+.nd-ad { justify-content: center; }
+.nd-grup { border-left: 1px solid var(--background-modifier-border); padding-left: 8px; }
+.nd-grup .nd-butonlar { display: flex; gap: 3px; align-items: center; }
+.nd-oge { font-size: 0.72em; opacity: 0.6; letter-spacing: 0.02em; text-transform: uppercase; }
+.nd-oge-sil { padding: 0 4px; font-size: 0.75em; opacity: 0.6; border-color: transparent; background: transparent; }
+.nd-oge-sil:hover { opacity: 1; color: var(--text-error); background: var(--background-modifier-hover); }
+
+/* Özet tabloları */
+.nd-ozet { margin-top: 8px; border-collapse: collapse; }
+.nd-ozet th, .nd-ozet td { border: 1px solid var(--background-modifier-border); padding: 2px 7px; text-align: center; }
+.nd-ozet th { background: var(--background-secondary); }
+.nd-ozet td.nd-ad-h { text-align: left; }
+.nd-alt-baslik { font-weight: 600; font-size: 0.9em; margin: 12px 0 0 0; opacity: 0.85; }
+.nd-not { opacity: 0.6; font-size: 0.85em; margin-top: 4px; }
+.nd-hata { color: var(--text-error); }
+
+/* Mobil: tek kolon, gruplar yatay */
+@media (max-width: 700px) {
+  .nd-liste { grid-template-columns: 1fr; }
+  .nd-satir { display: block; padding: 4px 0; border-bottom: 1px solid var(--background-modifier-border); }
+  .nd-satir > * { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 6px; border-bottom: none; padding: 1px 0; }
+  .nd-ad { flex: 1 1 100%; }
+  .nd-grup { border-left: none; padding-left: 0; }
+}
+
+/* Gizli veri bloğu — notun içinde durur, canlı önizlemede ve okuma görünümünde GÖRÜNMEZ
+   (3D model notlarındaki .model-veri deseninin aynısı). Veriyi görmek için kaynak moda geç. */
+.nd-veri { display: none; }
+
+/* --- Öğrenci kartı (veli verisi, v9) --- */
+
+/* Satırdaki ad artık tıklanabilir: ● bilgi var / ○ boş */
+.nd-btn.nd-ad-btn { padding: 0 4px; border-color: transparent; background: transparent; text-align: left; justify-content: flex-start; font-weight: inherit; }
+.nd-btn.nd-ad-btn:hover { background: var(--background-modifier-hover); text-decoration: underline dotted; }
+.nd-btn.nd-ad-btn.nd-ad-dolu { color: var(--text-accent); }
+.nd-btn.nd-ad-btn.nd-aktif { background: var(--interactive-accent); color: var(--text-on-accent); }
+
+.nd-kart { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: flex-start; margin: 8px 0; padding: 8px 10px; border: 1px solid var(--background-modifier-border); border-left: 3px solid var(--interactive-accent); border-radius: 6px; background: var(--background-secondary); }
+.nd-kart-bas { flex-basis: 100%; display: flex; align-items: center; gap: 8px; }
+.nd-kart-bas .nd-kart-ad { flex: 0 0 auto; }
+.nd-kart-bas .nd-not { flex: 1 1 auto; margin-top: 0; }
+.nd-kart-ad { font-weight: 600; font-size: 1.02em; }
+.nd-btn.nd-kart-kapat { padding: 0 6px; border-color: transparent; background: transparent; opacity: 0.6; }
+.nd-btn.nd-kart-kapat:hover { opacity: 1; color: var(--text-error); background: var(--background-modifier-hover); }
+.nd-kart-satir { display: flex; align-items: center; gap: 6px; min-width: 190px; flex: 1 1 190px; }
+.nd-kart-satir.nd-kart-genis { flex-basis: 100%; }
+.nd-kart-etiket { flex: 0 0 auto; min-width: 74px; font-size: 0.82em; opacity: 0.75; }
+.nd-kart-giris { flex: 1 1 auto; flex-basis: auto; }
+.nd-kart-not { display: flex; align-items: flex-start; gap: 6px; flex: 1 1 100%; min-width: 0; }
+.nd-kart-metin { flex: 1 1 auto; flex-basis: auto; resize: vertical; min-height: 2.4em; line-height: 1.35; font-family: inherit; }
+.nd-kart-metin.nd-kart-kaydi { border-color: var(--interactive-accent); box-shadow: 0 0 0 1px var(--interactive-accent); }
+.nd-kart-bolum { flex-basis: 100%; margin: 8px 0 0 0; padding-top: 5px; font-weight: 600; font-size: 0.85em; opacity: 0.85; border-top: 1px solid var(--background-modifier-border); }
+.nd-kart .nd-not { flex-basis: 100%; }
+
+/* Seçmeli alan (v12): kapalıyken değer butonu, açıkken liste */
+.nd-kart-secim { position: relative; flex: 1 1 auto; display: flex; align-items: center; gap: 6px; justify-content: space-between; text-align: left; font-size: 0.9em; }
+.nd-kart-secim .nd-kart-deger { flex: 1 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nd-kart-secim .nd-kart-ok { flex: 0 0 auto; opacity: 0.55; font-size: 0.85em; }
+.nd-kart-secim.nd-kart-bos .nd-kart-deger { opacity: 0.5; font-style: italic; }
+.nd-kart-satir:has(.nd-havuz) { flex-wrap: wrap; }
+.nd-havuz { flex-basis: 100%; max-height: 210px; overflow-y: auto; margin: 2px 0 2px 80px; padding: 4px; border: 1px solid var(--background-modifier-border); border-radius: 6px; background: var(--background-primary); box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+.nd-havuz-secenek { padding: 3px 8px; border-radius: 4px; cursor: pointer; font-size: 0.88em; }
+.nd-havuz-secenek:hover { background: var(--background-modifier-hover); }
+.nd-havuz-secenek.nd-aktif { background: var(--interactive-accent); color: var(--text-on-accent); }
+.nd-havuz-diger { font-style: italic; opacity: 0.8; border-top: 1px solid var(--background-modifier-border); margin-top: 3px; padding-top: 5px; }
+.nd-havuz-bosla { opacity: 0.7; border-top: 1px solid var(--background-modifier-border); margin-top: 3px; padding-top: 5px; }
+.nd-havuz-giris { width: 100%; margin-top: 4px; }
+
+@media (max-width: 700px) {
+  .nd-kart-satir, .nd-kart-not { flex-basis: 100%; }
+  .nd-kart-etiket { min-width: 62px; }
+}
+

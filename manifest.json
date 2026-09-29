@@ -1,0 +1,9 @@
+{
+  "id": "not-defteri",
+  "name": "Not Defteri",
+  "version": "1.3.0",
+  "minAppVersion": "1.1.0",
+  "description": "Öğrenci notlandırma — artı / eksi / gelmedi tıklamalı takip, özet tablo ve öğrenci kartı (T.C., aile, sağlık, akademik durum, KVKK izinleri, özel notlar). Hermes yazdı.",
+  "author": "Hermes",
+  "isDesktopOnly": false
+}
